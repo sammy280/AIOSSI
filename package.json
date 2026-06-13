@@ -1,0 +1,19 @@
+{
+  "name": "sammy-restaurant-erp",
+  "version": "1.0.0",
+  "description": "Sammy's Restaurant ERP — Full Monorepo",
+  "private": true,
+  "scripts": {
+    "backend": "cd backend && npm run dev",
+    "frontend": "cd frontend && npm run dev",
+    "store": "cd online-store && npm run dev",
+    "dev": "concurrently \"npm run backend\" \"npm run frontend\" \"npm run store\"",
+    "install:all": "npm install && cd backend && npm install && cd ../frontend && npm install && cd ../online-store && npm install",
+    "db:push": "cd backend && npm run db:push",
+    "db:seed": "cd backend && npm run db:seed",
+    "db:setup": "cd backend && npm run db:push && npm run db:seed"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

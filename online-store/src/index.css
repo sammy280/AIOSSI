@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { box-sizing: border-box; }
+  body {
+    font-family: 'Inter', sans-serif;
+    @apply bg-white text-gray-900 antialiased;
+  }
+  html { scroll-behavior: smooth; }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-6 py-3 bg-brand text-white font-semibold rounded-2xl hover:bg-brand-600 active:scale-95 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-outline {
+    @apply px-6 py-3 border-2 border-brand text-brand font-semibold rounded-2xl hover:bg-brand hover:text-white active:scale-95 transition-all duration-200;
+  }
+  .card {
+    @apply bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden;
+  }
+  .input {
+    @apply w-full px-4 py-3 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand/30 focus:border-brand transition-all;
+  }
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold;
+  }
+  .product-card {
+    @apply card hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer;
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { @apply bg-gray-100; }
+::-webkit-scrollbar-thumb { @apply bg-gray-300 rounded-full; }
+::-webkit-scrollbar-thumb:hover { @apply bg-gray-400; }
+
+/* Cart animation */
+.cart-bounce { animation: cartBounce 0.3s ease; }
+@keyframes cartBounce {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+/* Progress steps */
+.step-active { @apply bg-brand text-white; }
+.step-done { @apply bg-green-500 text-white; }
+.step-inactive { @apply bg-gray-200 text-gray-500; }

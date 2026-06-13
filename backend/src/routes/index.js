@@ -1,0 +1,40 @@
+const express = require('express');
+const router = express.Router();
+
+router.use('/auth', require('./auth.routes'));
+router.use('/users', require('./users.routes'));
+router.use('/menu', require('./menu.routes'));
+router.use('/tables', require('./tables.routes'));
+router.use('/orders', require('./orders.routes'));
+router.use('/kitchen', require('./kitchen.routes'));
+router.use('/bar', require('./bar.routes'));
+router.use('/bills', require('./bills.routes'));
+router.use('/payments', require('./payments.routes'));
+router.use('/inventory', require('./inventory.routes'));
+router.use('/suppliers', require('./suppliers.routes'));
+router.use('/attendance', require('./attendance.routes'));
+router.use('/shifts', require('./shifts.routes'));
+router.use('/payroll', require('./payroll.routes'));
+router.use('/customers', require('./customers.routes'));
+router.use('/reservations', require('./reservations.routes'));
+router.use('/expenses', require('./expenses.routes'));
+router.use('/notifications', require('./notifications.routes'));
+router.use('/punishments', require('./punishments.routes'));
+router.use('/fired-employees', require('./firedEmployees.routes'));
+router.use('/delete-requests', require('./deleteRequests.routes'));
+router.use('/audit-logs', require('./auditLogs.routes'));
+router.use('/analytics', require('./analytics.routes'));
+router.use('/reports', require('./reports.routes'));
+router.use('/performance', require('./performance.routes'));
+router.use('/backup', require('./backup.routes'));
+router.use('/settings', require('./settings.routes'));
+router.use('/credit-sales', require('./credit.routes'));
+router.use('/daily-reports', require('./dailyReports.routes'));
+router.use('/requisitions', require('./requisitions.routes'));
+// Online ordering
+router.use('/online', require('./online.routes'));
+router.use('/delivery', require('./delivery.routes'));
+router.use('/promotions', require('./promotions.routes'));
+router.use('/reviews', require('./reviews.routes'));
+
+module.exports = router;
