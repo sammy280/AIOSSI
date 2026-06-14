@@ -30,6 +30,20 @@ const allowedOrigins = [
   process.env.ONLINE_STORE_URL || 'http://localhost:5174',
   'https://aiossi-liard.vercel.app',
 ];
+
+app.use(cors({
+  origin: (origin, cb) => {
+    if (!origin) return cb(null, true);
+    if (
+      allowedOrigins.includes(origin) ||
+      origin.endsWith('.vercel.app') // allow all vercel preview URLs
+    ) {
+      return cb(null, true);
+    }
+    cb(new Error('Not allowed by CORS'));
+  },
+  credentials: true,
+}));
 app.use(cors({
   origin: (origin, cb) => {
     if (!origin || allowedOrigins.includes(origin)) return cb(null, true);
